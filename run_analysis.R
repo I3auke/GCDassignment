@@ -35,6 +35,7 @@ df_test02<-cbind(df_test01,df_subj_tst,df_act_tst)
 df_train02<-cbind(df_train01,df_subj_trn,df_act_trn)
 ## merge test and train tables vertically 
 df<-rbind(df_test02,df_train02)
+
 ## read activity-label data, merge activity-labels to dataset and 
 ## delete numeric activities-column
 df_actlbl<-read.table("UCI HAR Dataset/activity_labels.txt", sep="", header=FALSE)
@@ -49,14 +50,14 @@ names<-sub("^f","frequency_", names)
 names<-sub("Acc","_Acceleration", names)
 names<-sub("Gyro","_Gyroscope", names)
 names<-sub("Mag","_Magnitude", names)
-names<-sub("std","_standarddeviation", names)
+names<-sub("std","standarddeviation", names)
 names(df02)<-names
 
 ## melt table in order to calculate means per activity/subject combination
 library(dplyr)
 library(reshape2)
 melted <- melt(df02, id.vars=c("subjects", "activity_label"))
-grouped <- group_by(melted, subjects, activity_label)
+grouped <- group_by(melted, subjects, activity_label, variable)
 means<-summarise(grouped, mean=mean(value))
 #write result into output-file 
 write.table(means,file='avg_act_subj.txt', row.name=FALSE)
