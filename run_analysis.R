@@ -3,7 +3,8 @@
 ## and extracted in the current working directory
 ## files will be read into dataframes, the relevant columns will be
 ## extracted, the 'subjects' and 'activity' data will be added
-## and then the 'test' and 'tran' data will be merged
+## and then the 'test' and 'train' data will be merged
+## after that, the means of the variables are calculated per subject/activity-combination
 
 ## Read test, train and feature data
 df_test<-read.table("UCI HAR Dataset/test/X_test.txt", sep="", header=FALSE)
