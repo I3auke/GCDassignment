@@ -3,18 +3,18 @@ The output of the run_analysis.R script is has the filename "avg_act_subj.txt"
 The file is a table with 4 columns and 11882 rows
 below, a description of the columns:
 
-1 subjects
+* 1 subjects
 unit: numeric-label
 Is the integer number 1 to 30 identifying the 30 people that participated in the experiment 
 
-2 activity_label
+* 2 activity_label
 unit: label 
 Is the string that shows the activity during the measurements: 6 labels from "sitting" to "laying" 
 
-3 variable
+* 3 variable
 unit: string
 a description of the variable of which the average shown in the 'mean' column
 
-4 mean
+* 4 mean
 Is the mean of the measurements of the variable in the column 'variable' for that specific subject/activity combination
 
