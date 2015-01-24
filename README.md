@@ -1,4 +1,4 @@
-the script assumes the relevant files, are downloaded 
+the script assumes the relevant files are downloaded 
 and extracted in the current working directory
 
 run the script and the output-file will be placed in the current working directory
